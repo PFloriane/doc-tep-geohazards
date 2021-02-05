@@ -1,7 +1,7 @@
 MPIC-ETQ: Multiple Pairwise optical Image Correlation for Earthquake analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: assets/tuto_mpicetq_logo.png
+.. image:: assets/tuto_mpicetq_logo_small.png
 
 **MPIC-ETQ**
 
@@ -102,6 +102,8 @@ There are 16 processing parameters that can be adjusted. When hovering over the 
 * **Decorrelation threshold:** The matches with a correlation coefficient expressed in the range [0,1] will be discarded. The default value is *0.2*.
 * **Spatial matching range:** Define the search range in pixel for finding matches based on the template. The actual search range is computed from this parameter as round(Spatial matching range/0.8)+2. The parameter has to be adjusted according to the maximum expected displacement taking into account also the possible coregistration bias of the input images.
 * **Regularization parameter:** Similar to the window size, the regularization parameter controls the smoothness of the expected motion field. Increasing the regularization parameter is putting greater emphasis on a smooth motion field where neighboring pixels will have similar displacment values. For large scale features such as coseismic displacement, large value lead to smoother and less noisy results. The default value is set to *0.3*.
+* **Use a direction for regularization:** By default the regularization is isotropic but the user can choose a direction for the regularization meaning the displacement field will constrain a smooth gradient in this direction.
+* **Direction of the fault plane / Teta0:** Direction for the regularization, in the case of strike-slip earthquake and if the a priori known, it is recommended to chose the direction of the fault (with East Teta0=0). 
 * **Snow mask:** If set to *True*, the areas of the images covered by snow are masked. By default, this parameter is set to *True*.
 * **Cloud mask:** If set to *True*, the areas of the images covered by clouds are masked. By default, this parameter is set to *True*.
 * **Slope mask range minimum:** The pixels located on terrain slopes with an angle larger than the value set with the parameter are filtered out in the products. By default, the pixels located on slopes with angle larger than 80 degrees are filtered.
